@@ -16,6 +16,6 @@ if(idade == 18 && possuiCnh == "sim"){
     alert("Parabéns você pode dirigir!!")
 }
 else{
-    alert("Ainda nãopode dirigir!!!")
+    alert("Ainda não pode dirigir!!!")
 }
 
