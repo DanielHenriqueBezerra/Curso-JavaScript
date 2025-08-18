@@ -15,3 +15,75 @@
 
 
 
+//ChatGpt
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Plano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #d0ffd0;
+            border-radius: 5px;
+            border: 1px solid #4caf50;
+        }
+        .success {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            border: 1px solid #00bfff;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Escolha seu plano e quantas telas deseja</h2>
+
+<form id="planoForm">
+    <label for="plano">Escolha o plano:</label><br>
+    <select id="plano">
+        <option value="1">Básico (R$ 25,00)</option>
+        <option value="2">Premium (R$ 35,00)</option>
+        <option value="3">Ultra (R$ 50,00)</option>
+        <option value="4"> Mega (R$ 80,00)</option>
+    </select><br><br>
+
+    <label for="telas">Quantas telas:</label><br>
+    <select id="telas">
+        <option value="1">1-2 telas (R$ 0,00)</option>
+        <option value="2">3-4 telas (R$ 5,00 por tela extra)</option>
+        <option value="3">5 ou mais telas (R$ 7,50 por tela extra)</option>
+        <option value="4"> 7 ou mais telas (R$ 9,00 por tela extra)</option>
+    </select><br><br>
+
+    <button type="submit">Calcular</button>
+</form>
+
+<!-- Resultados serão exibidos aqui -->
+<div id="resultado" class="result" style="display:none;"></div>
+<div id="sucesso" class="success" style="display:none;"></div>
+<div id="erro" class="error" style="display:none;"></div>
+
+<!-- Referência ao arquivo JavaScript externo -->
+<script src="script.js"></script>
+
+</body>
+</html>
