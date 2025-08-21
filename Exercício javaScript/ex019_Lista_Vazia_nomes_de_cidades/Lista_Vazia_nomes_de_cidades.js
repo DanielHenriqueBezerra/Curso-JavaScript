@@ -18,7 +18,11 @@
         
 // }
 
-const animais = ["Cachorro", "Gato", "Pássaro"];
-    for (let i = 0; i < animais.length; i++){
-        console.log(`${i + 1}º. ${animais[i]}`);
-    }
+// const animais = ["Cachorro", "Gato", "Pássaro"];
+//     for (let i = 0; i < animais.length; i++){
+//         console.log(`${i + 1}º. ${animais[i]}`);
+//     }
+
+let pato = []
+
+for ()
