@@ -5,96 +5,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaMedi</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <style>
-      /* ----- ESTILO BÁSICO ----- */
+    /* ----- ESTILO BÁSICO ----- */
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f0f8ff; /* cor de fundo clara */
-      color: #000; /* texto preto */
-    }
- header {
-      background: #004080; /* azul escuro */
-      color: white;
-      padding: 10px;
-    }
+  margin: 0; 
+  /* outros: 10px, 20px, auto */
+  font-family: Arial, sans-serif; 
+  /* outros: Verdana, Georgia, 'Times New Roman', monospace */
+  background: #f0f8ff; 
+  /* outros: white, #e6e6e6, linear-gradient(to right, #fff, #ddd) */
+  color: #000; 
+  /* outros: #333, #444, #666, darkblue */
+}
 
-   nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }  
- nav a {
-      color: white;
-      text-decoration: none;
+header {
+  background: #004080; 
+  /* outros: darkblue, navy, black, #0066cc */
+  color: white; 
+  /* outros: black, yellow, #ffcc00 */
+  padding: 10px; 
+  /* outros: 5px, 20px, 40px */
+}
 
-      margin: 0 8px;
-    } 
-a {
-      color: rgb(248, 9, 9);
-      text-decoration: none;
-      margin: 0 8px;
+nav {
+  display: flex; 
+  /* outros: block, grid, inline-flex */
+  justify-content: space-between; 
+  /* outros: center, flex-start, flex-end, space-around, space-evenly */
+  align-items: center; 
+  /* outros: flex-start, flex-end, baseline, stretch */
+}
+
+nav a {
+  color: white; 
+  /* outros: yellow, #ffcc00, lightblue, black */
+  text-decoration: none; 
+  /* outros: underline, overline, line-through */
+  margin: 0 8px; 
+  /* outros: 0, 5px, 15px */
+}
 
 nav a:hover {
-      text-decoration: underline;
-    }
+  text-decoration: underline; 
+  /* outros: none, overline, line-through */
+}
 
 section {
-      text-align: center;
-      padding: 40px 20px;
-      background: #cce6ff; /* azul claro */
-    }
-    
- section h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
+  text-align: center; 
+  /* outros: left, right, justify */
+  padding: 40px 20px; 
+  /* outros: 10px, 20px, 80px */
+  background: #cce6ff; 
+  /* outros: #e6f7ff, lightgray, linear-gradient(to bottom, #cce6ff, #99ccff) */
+  
+}
+
+section h1 {
+  font-size: 28px; 
+  /* outros: 20px, 36px, 48px */
+  margin-bottom: 10px; 
+  /* outros: 0, 20px, 40px */
+  
+}
 
 section a {
-      display: inline-block;
-      background: #004080;
-      color: white;
-      padding: 10px 15px;
-      margin: 5px;
-      border-radius: 5px;
-      text-decoration: none;
-    }
+  display: inline-block; 
+  /* outros: block, inline */
+  background: #004080; 
+  /* outros: darkgreen, red, black, #0080ff */
+  color: white; 
+  /* outros: black, yellow, lightblue */
+  padding: 10px 15px; 
+  /* outros: 5px, 20px, 30px */
+  margin: 5px; 
+  /* outros: 0, 10px, 20px */
+  border-radius: 5px; 
+  /* outros: 0, 10px, 50% (círculo) */
+  text-decoration: none; 
+  /* outros: underline, overline, line-through */
+}
+
 article {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 10px;
-      padding: 20px;
-    }
+  display: grid; 
+  /* outros: block, flex */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  /* outros: 1fr 1fr 1fr, repeat(2, 1fr), 300px auto */
+  gap: 10px; 
+  /* outros: 0, 20px, 40px */
+  padding: 20px; 
+  /* outros: 10px, 30px, 50px */
+}
+
+article div {
+  border: 1px solid #ccc; 
+  /* outros: none, 2px dashed #000, 3px dotted red */
+  padding: 15px; 
+  /* outros: 5px, 30px, 50px */
+  background: white; 
+  /* outros: #f9f9f9, lightyellow, #e6f7ff */
+}
+
+section h3 {
+  display: inline-block;
+    background: #004080;
+    color: white;
+    padding: 50px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
 footer {
-      background: #004080;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-size: 12px;
-      margin-top: 20px;
-    }
+  background: #2064e288; 
+  /*background: #004080;*/
+  /* outros: black, darkgray, #333, #0066cc */
+  color: white; 
+  /* outros: yellow, lightgray, #ffcc00 */
+  text-align: center; 
+  /* outros: left, right, justify */
+  padding: 19px; 
+  /* outros: 5px, 20px, 40px */
+  font-size: 15px; 
+  /* outros: 10px, 16px, 20px */
+  margin-top: 0px; 
+  /* outros: 0, 40px, 80px */
+}
 
-
+  </style
 </style>
 
 <body>
     <header>
         <nav>
             <div>
-                
-                    <strong>🩺 NovaMedi Clínica de agendamentos</strong>
-                
+
+                <strong>🩺 NovaMedi Clínica de agendamentos</strong>
+
             </div>
 
             <div>
-                
-                    <a href="index.html">Início</a>
-                    <a href="destinos.html">Destinos</a>
-                    <a href="pacotes.html">Pacotes</a>
-                    <a href="sobre.html">Sobre</a>
-                    <a href="contato.html">Contato</a>
-                
+
+                <a href="index.html">Início</a>
+                <a href="destinos.html">Destinos</a>
+                <a href="pacotes.html">Pacotes</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+
             </div>
         </nav>
     </header>
