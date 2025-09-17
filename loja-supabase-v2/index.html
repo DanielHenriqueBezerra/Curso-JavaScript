@@ -1,0 +1,83 @@
+<!DOCTYPE html> <!-- Diz ao navegador que o documento usa o padrão HTML5 -->
+<html lang="pt-BR"> <!-- Início do HTML e idioma definido como português do Brasil -->
+<head>
+  <meta charset="UTF-8"> <!-- Suporte a acentuação e caracteres especiais -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Faz o layout ficar responsivo no celular -->
+  <title>Loja de PCs e Notebooks</title> <!-- Título que aparece na aba do navegador -->
+
+  <link rel="stylesheet" href="style.css"> <!-- Carrega seu arquivo de estilos -->
+
+  <!-- CDN do Supabase (necessária para o script que fala com o banco) -->
+  <script src="https://unpkg.com/@supabase/supabase-js"></script> <!-- Biblioteca oficial do Supabase no navegador -->
+</head>
+
+<body> <!-- Início do corpo visível da página -->
+
+  <!-- ======= CABEÇALHO / MENU ======= -->
+  <header> <!-- Barra superior do site -->
+    <h1>🖥️ Loja de PCs & Notebooks</h1> <!-- Título principal do site -->
+
+    <!-- IMPORTANTE: o menu começa ESCONDIDO. Ele só é exibido após login (via script.js) -->
+    <nav id="menu" style="display:none;"> <!-- Navegação. "display:none" esconde ao abrir o site -->
+      <!-- NÃO colocamos botão "Login" aqui, pois o login aparece sozinho antes de logar -->
+      <button onclick="mostrarPagina('categorias')">Categorias</button> <!-- Vai para a seção de categorias -->
+      <button onclick="mostrarPagina('produtos')">Produtos</button> <!-- Vai para a seção de produtos -->
+      <button onclick="mostrarPagina('carrinho')">Carrinho</button> <!-- Vai para a seção do carrinho -->
+      <button onclick="logout()">Sair</button> <!-- Encerra a sessão e volta a mostrar apenas o login -->
+    </nav> <!-- Fim da navegação -->
+  </header> <!-- Fim do cabeçalho -->
+
+  <!-- ======= PÁGINA: LOGIN (mostrada primeiro) ======= -->
+  <section id="login" class="pagina ativa"> <!-- Seção de login; classe "ativa" deixa visível ao abrir -->
+    <h2>Entrar ou Cadastrar</h2> <!-- Título da seção -->
+    <input type="email" id="email" placeholder="Seu email"> <!-- Campo para digitar o email -->
+    <input type="password" id="senha" placeholder="Sua senha"> <!-- Campo para digitar a senha -->
+    <br><br> <!-- Quebras de linha para espaçamento -->
+
+    <!-- Botões: chamam funções do seu script.js -->
+    <button onclick="login(document.getElementById('email').value, document.getElementById('senha').value)">
+      Entrar
+    </button> <!-- Executa login() passando os valores dos inputs -->
+
+    <button onclick="cadastrar(document.getElementById('email').value, document.getElementById('senha').value)">
+      Cadastrar
+    </button> <!-- Executa cadastrar() para criar um usuário -->
+  </section> <!-- Fim da seção de login -->
+
+  <!-- ======= PÁGINA: CATEGORIAS ======= -->
+  <section id="categorias" class="pagina"> <!-- Seção de categorias (inicia oculta sem a classe "ativa") -->
+    <h2>Categorias</h2> <!-- Título da seção -->
+    <div id="lista-categorias"></div> <!-- Container onde o script injeta os cards das categorias -->
+  </section> <!-- Fim de categorias -->
+
+  <!-- ======= PÁGINA: PRODUTOS ======= -->
+  <section id="produtos" class="pagina"> <!-- Seção de produtos (inicia oculta) -->
+    <h2>Produtos</h2> <!-- Título da seção -->
+    <div id="lista-produtos"></div> <!-- Container onde o script injeta os cards dos produtos -->
+  </section> <!-- Fim de produtos -->
+
+  <!-- ======= PÁGINA: CARRINHO ======= -->
+  <section id="carrinho" class="pagina"> <!-- Seção do carrinho (inicia oculta) -->
+    <h2>Meu Carrinho</h2> <!-- Título da seção -->
+    <ul id="lista-carrinho"></ul> <!-- Lista dinâmica: cada item do carrinho vira um <li> aqui -->
+    <p id="total">Total: R$ 0,00</p> <!-- Total calculado pelo script (soma de preço x quantidade) -->
+    <button onclick="finalizarCompra()">Finalizar Compra</button> <!-- Chama a função que salva os pedidos -->
+  </section> <!-- Fim do carrinho -->
+
+  <!-- ======= SCRIPTS ======= -->
+  <script src="script.js"></script> <!-- Seu arquivo JS (faz login, busca produtos, carrinho etc.) -->
+
+  <script>
+    /* 
+      Função utilitária para alternar páginas. 
+      Ela remove a classe "ativa" de todas e adiciona na escolhida.
+      Usei aqui para o menu; seu script.js também pode usá-la se já existir.
+    */
+    function mostrarPagina(id) {
+      document.querySelectorAll(".pagina").forEach(p => p.classList.remove("ativa")); // esconde todas
+      document.getElementById(id).classList.add("ativa"); // mostra só a escolhida
+    }
+  </script> <!-- Fim do script auxiliar -->
+</body> <!-- Fim do corpo da página -->
+
+</html> <!-- Fim do documento HTML -->
